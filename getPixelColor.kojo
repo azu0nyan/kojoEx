@@ -20,7 +20,7 @@ repeat(4){
 //Через МАГИЮ получаем текущую картинку, нарисованную на экране, запишем её в img
 val dAPI = TSCanvas.asInstanceOf[net.kogics.kojo.lite.DrawingCanvasAPI]
 val cam = dAPI.tCanvas.getCamera 
-val img = cam.toImage.asInstanceOf[java.awt.image.BufferedImage]
+val img = cam.toImage.asInstanceOf[java.awt.image.BufferedImage] //!!!!!!Это долгая операция
 //img.getRGB(x, y) возвращает цвет пикселя как число, в экраннык координатах
 //0, 0 находится в верхнем левом углу(что неудобно)
 //цвет возвращается как его 32-битное значение  Int
@@ -37,7 +37,7 @@ animate{
         onCamera.getY >= 0 && onCamera.getY < img.getHeight){
         val colorInt = img.getRGB(onCamera.getX.toInt, onCamera.getY.toInt)
         //конвертируем цвет в привычный нам формат
-        val color = ColorMaker.hex(colorInt)
+        val color = ColorMaker.hex(colorInt)       
         println(color)
     }
 }
