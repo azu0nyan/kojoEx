@@ -1,3 +1,4 @@
+def f1(a: Int, b:Int) = a + b * 20
 
 def f2(a: Int): Boolean =
     if (a > 7) true
