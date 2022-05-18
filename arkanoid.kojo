@@ -33,7 +33,7 @@ w, h ширина и высота
 
 
 */
-def collide(x: Int, y: Int, bx: Int, by: Int, w: Int, h: Int, r: Int): Int = {
+def collide(x: Double, y: Double, bx: Double, by: Double, w: Double, h: Double, r: Double): Int = {
     //разберем все случаи
     if (x < bx && y > by + h) //1
         if (math.sqrt((x - bx) * (x - bx) + (y - by) * (y - by - h)) < r) 1
@@ -53,7 +53,7 @@ animate {
         var c = collide(ball.position.x, ball.position.y,
             b.position.x, b.position.y, 20, 10, 10) //определяем наличие столкновений
         if(c != 0) {/*мы столкнулись с блоком нужно его удалить из списка блоков*/}    
-        if (c == 1 || c == 3 || c = 7 || c = 9) {
+        if (c == 1 || c == 3 || c == 7 || c == 9) {
             sx = -sx
             sy = -sy
         }
